@@ -4,6 +4,7 @@ package virtualzoo.infrastructure;
  * <p>
  * Kelas Cell yang menangani
  * </p>
+ *
  * @author Rionaldi Chandraseta - 13515077
  * @version 2.0
  * @since 2.0
@@ -15,31 +16,31 @@ public class Cell {
    * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung.
    * </p>
    */
-  boolean infrastructureAccessible;
+  private boolean infrastructureAccessible;
   /**
    * <p>
    * Jenis Cell.
    * </p>
    */
-  String type;
+  private String type;
   /**
    * <p>
    * Nama dari suatu Cell.
    * </p>
    */
-  String name;
+  private String name;
   /**
    * <p>
    * Jalan merupakan jalan masuk Zoo.
    * </p>
    */
-  boolean isEntrance;
+  private boolean isEntrance;
   /**
    * <p>
    * Jalan merupakan jalan keluar Zoo.
    * </p>
    */
-  boolean isExit;
+  private boolean isExit;
 
   /**
    * <p>
@@ -49,6 +50,7 @@ public class Cell {
    * Road dan semua habitat memiliki nama "" (string kosong).
    * Parameter entrance dan exit hanya boleh true saat habitatType adalah "Road".
    * </p>
+   *
    * @param accessible Nilai true/false cell dapat diakses.
    * @param habitatType Tipe cell
    * @param facilityName Nama fasilitas cell
@@ -56,7 +58,7 @@ public class Cell {
    * @param roadExit Nilai true/false cell merupakan exit.
    */
   public Cell(boolean accessible, String habitatType, String facilityName, boolean roadEntrance,
-              boolean roadExit) {
+      boolean roadExit) {
     type = habitatType;
     if (type.equals("AirHabitat") || type.equals("LandHabitat") || type.equals("WaterHabitat")) {
       infrastructureAccessible = false;
@@ -84,6 +86,7 @@ public class Cell {
    *
    * Menciptakan cell yang sama dengan cell yang sudah ada.
    * </p>
+   *
    * @param c Objek cell yang telah diciptakan
    */
   public Cell(Cell c) {
@@ -98,6 +101,7 @@ public class Cell {
    * <p>
    * Mengembalikan apakah Cell dapat diakses.
    * </p>
+   *
    * @return Nilai infrastructureAccessible
    */
   public boolean infrastructureAccessible() {
@@ -108,6 +112,7 @@ public class Cell {
    * <p>
    * Mengembalikan tipe Cell.
    * </p>
+   *
    * @return Nilai type
    */
   public String getType() {
@@ -118,6 +123,7 @@ public class Cell {
    * <p>
    * Mengembalikan nama cell.
    * </p>
+   *
    * @return Nilai name
    */
   public String getfacilityName() {
@@ -128,6 +134,7 @@ public class Cell {
    * <p>
    * Mengembalikan apakah Cell merupakan jalan masuk Zoo.
    * </p>
+   *
    * @return Nilai isEntrance
    */
   public boolean isEntrance() {
@@ -138,6 +145,7 @@ public class Cell {
    * <p>
    * Mengembalikan apakah Cell merupakan jalan keluar Zoo.
    * </p>
+   *
    * @return Nilai isExit
    */
   public boolean isExit() {
@@ -148,6 +156,7 @@ public class Cell {
    * <p>
    * Mengembalikan character untuk proses render.
    * </p>
+   *
    * @return Karakter untuk dirender
    */
   public char render() {

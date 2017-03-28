@@ -54,7 +54,7 @@ public class Animal {
    * Sebuah Point yang menyatakan lokasi dari Animal.
    * </p>
    */
-  private Point position;
+  private Point position = new Point(-1, -1);
   /**
    * <p>
    * Atribut menentukan apakah perilaku Animal jinak atau liar.
@@ -521,7 +521,7 @@ public class Animal {
    * </p>
    * @return Nilai isLandAnimal
    */
-  public boolean isLandAnimal() {
+  public boolean getIsLandAnimal() {
     return isLandAnimal;
   }
 
@@ -531,7 +531,7 @@ public class Animal {
    * </p>
    * @return Nilai isWaterAnimal
    */
-  public boolean isWaterAnimal() {
+  public boolean getIsWaterAnimal() {
     return isWaterAnimal;
   }
 
@@ -541,7 +541,7 @@ public class Animal {
    * </p>
    * @return Nilai isAirAnimal
    */
-  public boolean isAirAnimal() {
+  public boolean getIsAirAnimal() {
     return isAirAnimal;
   }
 

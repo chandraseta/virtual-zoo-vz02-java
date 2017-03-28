@@ -42,7 +42,7 @@ public class Cage {
    * Banyak hewan yang ada pada suatu area.
    * </p>
    */
-  int nbAnimal;
+  private int nbAnimal;
 
   /**
    * <p>
