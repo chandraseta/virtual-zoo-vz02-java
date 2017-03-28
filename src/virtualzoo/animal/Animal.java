@@ -68,7 +68,7 @@ public class Animal {
    * objek Animal terkait.
    * </p>
    */
-  private Set<Integer> enemy = new HashSet<>();
+  private Set<Integer> enemy = new HashSet<Integer>();
   /**
    * <p>
    * Nilai berat Animal (dalam kilogram).

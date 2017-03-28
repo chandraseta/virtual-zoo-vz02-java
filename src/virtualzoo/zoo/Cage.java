@@ -1,104 +1,107 @@
-package virtualzoo.infrastructure;
+package virtualzoo.zoo;
 
 import java.awt.Point;
-import java.util.Random;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
+import java.util.concurrent.ThreadLocalRandom;
 import virtualzoo.animal.Animal;
 
 /**
- * <p>
- * Kelas Cage yang memiliki area dan berisi animal
- * </p>
- * @author Oktavianus Handika - 13515035
+ * Kelas Cage yang memiliki area dan berisi animal.
+ *
+ * @author Felix Limanta - 13515065
  * @version 2.0
  * @since 2.0
  */
-
 public class Cage {
-  public static final int LAND = 0;
-  public static final int WATER = 1;
-  public static final int AIR = 2;
+
   /**
-   * <p>
-   * Jenis Habitat pada setiap Cage-nya.
-   * </p>
+   * Konstanta untuk mempermudah pernyataan tipe LAND pada Cage
+   */
+  public static final int LAND = 0;
+
+  /**
+   * Konstanta untuk mempermudah pernyataan tipe WATER pada Cage
+   */
+  public static final int WATER = 1;
+
+  /**
+   * Konstanta untuk mempermudah pernyataan tipe AIR pada Cage
+   */
+  public static final int AIR = 2;
+
+  /**
+   * Atribut yang menandakan tipe Cage
    */
   private int type;
+
   /**
-   * <p>
-   * Set of Point yang menyatakan area Cage.
-   * </p>
+   * Berisi kumpulan Point yang membentuk Cage ini
    */
   private Set<Point> area;
+
   /**
-   * <p>
-   * Vector of pointer to Animal yang berisi hewan.
-   * </p>
+   * Berisi Animal yang ada di Cage ini
    */
   private Vector<Animal> animal;
+
   /**
-   * <p>
-   * Banyak hewan yang ada pada suatu area.
-   * </p>
+   * Jumlah Animal yang ada di Cage ini
    */
   private int nbAnimal;
 
   /**
-   * <p>
    * Constructor
-   *
    * Menciptakan cage default yaitu dengan habitat darat.
-   * </p>
    */
   public Cage() {
     type = LAND;
     nbAnimal = 0;
+    area = new HashSet<Point>();
+    animal = new Vector<Animal>();
   }
 
   /**
-   * <p>
    * Constructor
+   * Menciptakan cage dengan habitat tertentu.
    *
-   * Menciptakan Cage dengan Habitat tertentu.
-   * </p>
-   * @param habitatType tipe Habitat
+   * @param habitatType tipe habitat
    */
   public Cage(int habitatType) {
     type = habitatType;
     nbAnimal = 0;
+    area = new HashSet<Point>();
+    animal = new Vector<Animal>();
   }
 
   /**
-   * <p>
-   * Menambahkan Point P menjadi area dalam Cage.
-   * </p>
-   * @param p Nilai Point yang akan ditambahkan
+   * Menambahkan point P menjadi area dalam cage.
+   *
+   * @param p Nilai point yang akan ditambahkan.
    */
   public void addPoint(Point p) {
     area.add(p);
   }
 
   /**
-   * <p>
-   * Menghilangkan Point P dari area dalam Cage.
-   * </p>
-   * @param p Nilai Point yang akan dihilangkan
+   * Menghilangkan point P dari area dalam cage.
+   *
+   * @param p Nilai point yang akan dihilangkan.
    */
   public void removePoint(Point p) {
     area.remove(p);
   }
 
   /**
-   * <p>
    * Menambahkan animal ke dalam cage.
-   * Akan diperiksa terlebih dahulu apakah cage sudah penuh.
-   * </p>
-   * @param a Hewan yang ingin ditambahkan
+   * Akan dicek terlebih dahulu apakah cage sudah penuh.
+   *
+   * @param a Hewan yang ingin ditambahkan.
    */
   public void addAnimal(Animal a) {
     if (nbAnimal < area.size() / 10 * 3) {
-      if (!(a.getBehavior())) {
+      if (a.getBehavior()) {
         animal.add(a);
         nbAnimal++;
       } else {
@@ -115,30 +118,27 @@ public class Cage {
   }
 
   /**
-   * <p>
-   * Menghilangkan Animal ke-i dari Cage.
-   * </p>
-   * @param i Indeks Animal yang ingin dikurangi
+   * @param i Indeks animal yang ingin dikurangi.
+   * @return Hewan yang telah dihilangkan.
    */
-  public void removeAnimal(int i) {
+  public Animal removeAnimal(int i) {
     if (i < animal.size()) {
       Animal a = animal.elementAt(i);
       animal.remove(i);
       nbAnimal--;
+      return a;
+    } else {
+      return null;
     }
   }
 
   /**
-   * <p>
-   * Menggerakkan semua Animal di dalam Cage.
-   * Akan diperiksa agar Animal tidak keluar dari Cage.
-   * </p>
+   * Menggerakkan semua animal di dalam cage.
+   * Akan dicek agar animal tidak keluar dari cage.
    */
   public void moveAnimal() {
-    Random randomNo = new Random();
-
     for (int i = 0; i < animal.size(); ++i) {
-      int movement = randomNo.nextInt(4);
+      int movement = ThreadLocalRandom.current().nextInt(0,4);
       boolean movementInCage;
       int noOfTries = 0;
       do {
@@ -155,20 +155,16 @@ public class Cage {
   }
 
   /**
-   * <p>
-   * Getter area Cage.
-   * </p>
-   * @return Set of Point yang menyatakan area Cage
+   * Getter area cage.
+   * @return Set of point yang menyatakan area cage.
    */
   public Set<Point> getArea() {
     return area;
   }
 
   /**
-   * <p>
-   * Getter daftar Animal.
-   * </p>
-   * @return Vector of pointer to Animal yang berisi hewan
+   * Getter daftar animal.
+   * @return Vector of pointer to Animal yang berisi hewan.
    */
   public Vector<Animal> getAnimal() {
     return animal;
