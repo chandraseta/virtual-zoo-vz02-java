@@ -12,7 +12,7 @@ public class Cell {
   /**
    * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung.
    */
-  boolean is_accessible;
+  boolean infrastructureAccessible;
   /**
    * Jenis Cell.
    */
@@ -24,74 +24,75 @@ public class Cell {
   /**
    * Jalan merupakan jalan masuk Zoo.
    */
-  boolean is_entrance;
+  boolean isEntrance;
   /**
    * Jalan merupakan jalan keluar Zoo.
    */
-  boolean is_exit;
+  boolean isExit;
 
   /**
    * Constructor
-   *
    * Menciptakan cell sesuai dengan parameter.
-   * Semua habitat tidak bisa diakses (is_accessible = false).
+   * Semua habitat tidak bisa diakses (infrastructureAccessible = false).
    * Road dan semua habitat memiliki nama "" (string kosong).
-   * Parameter _entrance dan _exit hanya boleh true saat _type adalah "Road".
+   * Parameter entrance dan exit hanya boleh true saat habitatType adalah "Road".
    *
-   * @param _accessible Nilai true/false cell dapat diakses.
-   * @param _type Tipe cell.
-   * @param _name Nama fasilitas cell.
-   * @param _entrance Nilai true/false cell merupakan entrance.
-   * @param _exit Nilai true/false cell merupakan exit.
+   * @param accessible Nilai true/false cell dapat diakses.
+   * @param habitatType Tipe cell
+   * @param facilityName Nama fasilitas cell
+   * @param roadEntrance Nilai true/false cell merupakan entrance.
+   * @param roadExit Nilai true/false cell merupakan exit.
    */
-  public Cell(boolean _accessible, String _type, String _name, boolean _entrance, boolean _exit) {
-    type = _type;
+  public Cell(boolean accessible, String habitatType, String facilityName, boolean roadEntrance,
+              boolean roadExit) {
+    type = habitatType;
     if (type.equals("AirHabitat") || type.equals("LandHabitat") || type.equals("WaterHabitat")) {
-      is_accessible = false;
+      infrastructureAccessible = false;
     } else {
-      is_accessible = _accessible;
+      infrastructureAccessible = accessible;
     }
-    if (type.equals("Road") || type.equals("AirHabitat") || type.equals("LandHabitat") ||
-        type.equals("WaterHabitat")) {
+    if (type.equals("Road") || type.equals("AirHabitat") || type.equals("LandHabitat")
+        || type.equals("WaterHabitat")) {
       name = "";
     } else {
-      name = _name;
+      name = facilityName;
     }
     if (type == "Road") {
-      is_entrance = _entrance;
-      is_exit = _exit;
+      isEntrance = roadEntrance;
+      isExit = roadExit;
     } else {
-      is_entrance = false;
-      is_exit = false;
+      isEntrance = false;
+      isExit = false;
     }
   }
 
   /**
    * Copy constructor
-   *
    * Menciptakan cell yang sama dengan cell yang sudah ada.
    *
-   * @param C Objek cell yang telah diciptakan.
+   * @param c Objek cell yang telah diciptakan
    */
-  public Cell(Cell C) {
-    type = C.type;
-    is_accessible = C.is_accessible;
-    name = C.name;
-    is_entrance = C.is_entrance;
-    is_entrance = C.is_exit;
+  public Cell(Cell c) {
+    type = c.type;
+    infrastructureAccessible = c.infrastructureAccessible;
+    name = c.name;
+    isEntrance = c.isEntrance;
+    isEntrance = c.isExit;
   }
 
   /**
-   * Mengembalikan apakah cell dapat diakses.
-   * @return Nilai is_accessible.
+   * Mengembalikan apakah Cell dapat diakses.
+   *
+   * @return Nilai infrastructureAccessible
    */
-  public boolean isAccessible() {
-    return is_accessible;
+  public boolean infrastructureAccessible() {
+    return infrastructureAccessible;
   }
 
   /**
-   * Mengembalikan tipe cell.
-   * @return Nilai type.
+   * Mengembalikan tipe Cell.
+   *
+   * @return Nilai type
    */
   public String getType() {
     return type;
@@ -99,31 +100,35 @@ public class Cell {
 
   /**
    * Mengembalikan nama cell.
-   * @return Nilai name.
+   *
+   * @return Nilai name
    */
-  public String getName() {
+  public String getfacilityName() {
     return name;
   }
 
   /**
-   * Mengembalikan apakah cell merupakan jalan masuk Zoo.
-   * @return Nilai is_entrance.
+   * Mengembalikan apakah Cell merupakan jalan masuk Zoo.
+   *
+   * @return Nilai isEntrance
    */
   public boolean isEntrance() {
-    return is_entrance;
+    return isEntrance;
   }
 
   /**
-   * Mengembalikan apakah cell merupakan jalan keluar Zoo.
-   * @return Nilai is_exit.
+   * Mengembalikan apakah Cell merupakan jalan keluar Zoo.
+   *
+   * @return Nilai isExit
    */
   public boolean isExit() {
-    return is_exit;
+    return isExit;
   }
 
   /**
    * Mengembalikan character untuk proses render.
-   * @return Karakter untuk dirender.
+   *
+   * @return Karakter untuk dirender
    */
   public char render() {
     if (type.equals("AirHabitat")) {

@@ -8,45 +8,48 @@ package virtualzoo.animal;
  * @since 2.0
  */
 public class AnimalFood {
-
   /**
    * Jumlah total daging yang dibutuhkan (dalam kilogram).
    */
-  public static int total_req_meat;
+  public static int totalReqMeat;
   /**
    * Jumlah total tumbuhan yang dibutuhkan (dalam kilogram).
    */
-  public static int total_req_plant;
+  public static int totalReqPlant;
 
   /**
-   * Menambahkan jumlah daging yang dibutuhkan ke total_req_meat.
-   * @param req_meat Jumlah daging yang dibutuhkan.
+   * Menambahkan jumlah daging yang dibutuhkan ke totalReqMeat.
+   *
+   * @param reqMeat Jumlah daging yang dibutuhkan
    */
-  public static void addTotalMeat(int req_meat) {
-    total_req_meat += req_meat;
+  public static void addTotalMeat(int reqMeat) {
+    totalReqMeat += reqMeat;
   }
 
   /**
-   * Menambahkan jumlah tumbuhan yang dibutuhkan ke total_req_plant.
-   * @param req_plant Jumlah tumbuhan yang dibutuhkan
+   * Menambahkan jumlah tumbuhan yang dibutuhkan ke totalReqPlant.
+   *
+   * @param reqPlant Jumlah tumbuhan yang dibutuhkan
    */
-  public static void addTotalPlant(int req_plant) {
-    total_req_plant += req_plant;
+  public static void addTotalPlant(int reqPlant) {
+    totalReqPlant += reqPlant;
   }
 
   /**
    * Mengembalikan total jumlah daging yang dibutuhkan.
-   * @return Nilai total_req_meat.
+   *
+   * @return Nilai totalReqMeat
    */
   public static int getTotalMeat() {
-    return total_req_meat;
+    return totalReqMeat;
   }
 
   /**
-   * Mengembalikan total jumlah tumbuhan yang dibutuhkan
-   * @return Nilai total_req_plant.
+   * Mengembalikan total jumlah tumbuhan yang dibutuhkan.
+   *
+   * @return Nilai totalReqPlant
    */
   public static int getTotalPlant() {
-    return total_req_plant;
+    return totalReqPlant;
   }
 }

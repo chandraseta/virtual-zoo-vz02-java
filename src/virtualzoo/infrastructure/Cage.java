@@ -1,7 +1,9 @@
 package virtualzoo.infrastructure;
 
 import java.awt.Point;
-import java.util.*;
+import java.util.Random;
+import java.util.Set;
+import java.util.Vector;
 import virtualzoo.animal.Animal;
 
 /**
@@ -13,7 +15,6 @@ import virtualzoo.animal.Animal;
  */
 
 public class Cage {
-
   public static final int LAND = 0;
   public static final int WATER = 1;
   public static final int AIR = 2;
@@ -32,33 +33,32 @@ public class Cage {
   /**
    * Banyak hewan yang ada pada suatu area.
    */
-  int nb_animal;
+  int nbAnimal;
 
   /**
    * Constructor
-   *
    * Menciptakan cage default yaitu dengan habitat darat.
    */
   public Cage() {
     type = LAND;
-    nb_animal = 0;
+    nbAnimal = 0;
   }
 
   /**
    * Constructor
-   *
    * Menciptakan Cage dengan Habitat tertentu.
-   * @param _type tipe Habitat
+   *
+   * @param habitatType tipe Habitat
    */
-  public Cage(int _type) {
-    type = _type;
-    nb_animal = 0;
+  public Cage(int habitatType) {
+    type = habitatType;
+    nbAnimal = 0;
   }
 
   /**
    * Menambahkan Point P menjadi area dalam Cage.
    *
-   * @param p Nilai Point yang akan ditambahkan.
+   * @param p Nilai Point yang akan ditambahkan
    */
   public void addPoint(Point p) {
     area.add(p);
@@ -67,7 +67,7 @@ public class Cage {
   /**
    * Menghilangkan Point P dari area dalam Cage.
    *
-   * @param p Nilai Point yang akan dihilangkan.
+   * @param p Nilai Point yang akan dihilangkan
    */
   public void removePoint(Point p) {
     area.remove(p);
@@ -75,23 +75,23 @@ public class Cage {
 
   /**
    * Menambahkan animal ke dalam cage.
-   * Akan dicek terlebih dahulu apakah cage sudah penuh.
+   * Akan diperiksa terlebih dahulu apakah cage sudah penuh.
    *
-   * @param a Hewan yang ingin ditambahkan.
+   * @param a Hewan yang ingin ditambahkan
    */
   public void addAnimal(Animal a) {
-    if (nb_animal < area.size() / 10 * 3) {
+    if (nbAnimal < area.size() / 10 * 3) {
       if (!(a.getBehavior())) {
         animal.add(a);
-        nb_animal++;
+        nbAnimal++;
       } else {
         boolean placeable = true;
         for (int i = 0; i < animal.size() && placeable; ++i) {
-          placeable = a.isEnemy(animal.elementAt(i).getID());
+          placeable = a.isEnemy(animal.elementAt(i).getId());
         }
         if (placeable) {
           animal.add(a);
-          nb_animal++;
+          nbAnimal++;
         }
       }
     }
@@ -99,44 +99,45 @@ public class Cage {
 
   /**
    * Menghilangkan Animal ke-i dari Cage.
-   * @param i Indeks Animal yang ingin dikurangi.
+   *
+   * @param i Indeks Animal yang ingin dikurangi
    */
   public void removeAnimal(int i) {
     if (i < animal.size()) {
       Animal a = animal.elementAt(i);
       animal.remove(i);
-      nb_animal--;
+      nbAnimal--;
     }
   }
 
   /**
    * Menggerakkan semua Animal di dalam Cage.
-   * Akan dicek agar Animal tidak keluar dari Cage.
+   * Akan diperiksa agar Animal tidak keluar dari Cage.
    */
   public void moveAnimal() {
-    Random randomno = new Random();
+    Random randomNo = new Random();
 
     for (int i = 0; i < animal.size(); ++i) {
-      int movement = randomno.nextInt(4);
-      boolean movement_in_cage;
-      int no_of_tries = 0;
+      int movement = randomNo.nextInt(4);
+      boolean movementInCage;
+      int noOfTries = 0;
       do {
         animal.elementAt(i).move(movement);
-        movement_in_cage = area.contains(animal.elementAt(i).getPosition());
-        if (!movement_in_cage) {
+        movementInCage = area.contains(animal.elementAt(i).getPosition());
+        if (!movementInCage) {
           movement = (movement + 2) % 4;
           animal.elementAt(i).move(movement);
           movement = (movement + 3) % 4;
-          no_of_tries++;
+          noOfTries++;
         }
-      } while (!movement_in_cage && no_of_tries < 4);
+      } while (!movementInCage && noOfTries < 4);
     }
   }
 
   /**
    * Getter area Cage.
    *
-   * @return Set of Point yang menyatakan area Cage.
+   * @return Set of Point yang menyatakan area Cage
    */
   public Set<Point> getArea() {
     return area;
@@ -145,7 +146,7 @@ public class Cage {
   /**
    * Getter daftar Animal.
    *
-   * @return Vector of pointer to Animal yang berisi hewan.
+   * @return Vector of pointer to Animal yang berisi hewan
    */
   public Vector<Animal> getAnimal() {
     return animal;
