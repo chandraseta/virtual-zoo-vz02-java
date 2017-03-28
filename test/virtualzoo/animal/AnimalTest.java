@@ -2,7 +2,11 @@ package virtualzoo.animal;
 
 
 
+import static org.junit.Assert.assertEquals;
+
 import java.awt.Point;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * <p>
@@ -18,7 +22,7 @@ public class AnimalTest {
   private Animal animal1;
   private Animal animal2;
 
-  @BeforeAll
+  @Before
   public void setUp() {
     animal1 = new Animal(0, 10, 10, 10);
     animal2 = new Animal(1, 15, 15, 40);
@@ -28,8 +32,8 @@ public class AnimalTest {
   public void testGetterSetter {
     assertEquals("Error in getId()", animal1.getId(), 0);
     assertEquals("Error in getId()", animal2.getId(), 1);
-    animal1.setPosition(5,5)
-    assertEquals("Error in setPosition(), getPosition()", animal1.getPosition().getX(), 5);
+    animal1.setPosition(5,5);
+    assertEquals("Error in setPosition() and getPosition()", animal1.getPosition().getX(), 5);
 
   }
 
