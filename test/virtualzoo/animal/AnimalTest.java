@@ -1,11 +1,9 @@
 package virtualzoo.animal;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.awt.Point;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,72 +21,54 @@ public class AnimalTest {
   private Animal animal1;
   private Animal animal2;
 
+  /**
+   * Inisialisasi objek Animal untuk proses test.
+   */
   @Before
-  public void setUp() {
+  public void animalSetUp() {
     animal1 = new Animal(0, 10, 10, 10);
     animal2 = new Animal(1, 15, 15, 40);
   }
 
+  /**
+   * Pengetesan getter dan setter dari kelas Animal.
+   */
   @Test
   public void testGetterSetter() {
-    assertEquals("Error in getId()", animal1.getId(), 0);
-    assertEquals("Error in getId()", animal2.getId(), 1);
+    assertEquals("Error in getId()", 0, animal1.getId());
+    assertEquals("Error in getId()", 1, animal2.getId());
     animal1.setPosition(5, 5);
-    assertEquals("Error in setPosition() and getX()", animal1.getX(), 5);
-    assertEquals("Error in setPosition() and getY()", animal1.getY(), 5);
+    assertEquals("Error in setPosition() and getX()", 5, animal1.getX());
+    assertEquals("Error in setPosition() and getY()", 5, animal1.getY());
     assertTrue("Error in getIsLandAnimal()", animal1.getIsLandAnimal());
     assertFalse("Error in getIsWaterAnimal()", animal1.getIsWaterAnimal());
     assertFalse("Error in getIsAirAnimal()", animal1.getIsAirAnimal());
     assertTrue("Error in isHerbivore()", animal1.isHerbivore());
     assertFalse("Error in isCarnivore()", animal1.isCarnivore());
     assertFalse("Error in isOmnivore()", animal1.isOmnivore());
-    assertEquals("Error in getWeight()", animal1.getWeight(), 10);
+    assertEquals("Error in getWeight()", 10, animal1.getWeight());
     assertTrue("Error in getBehavior()", animal1.getBehavior());
     assertFalse("Error in getBehavior()", animal2.getBehavior());
   }
 
+  /**
+   * Pengetesan method move().
+   */
   @Test
   public void testMove() {
     animal2.move(1);
-    assertEquals("Error in move()", animal2.getX(), 15);
-    assertEquals("Error in move()", animal2.getY(), 14);
+    assertEquals("Error in move()", 15, animal2.getX());
+    assertEquals("Error in move()", 14, animal2.getY());
   }
 
   /**
-   * Mengetes apakah ID Animal benar.
+   * Pengetesan method addEnemy() dan removeEnemy().
    */
-  public void matchId() {
-    assertEquals("ID matches", animal.getId(), );
-  }
-
-  /**
-   * Mengetes apakah tipe Animal benar.
-   */
-  public void matchType() {
-    assertEquals("Land type matches", animal.getIsLandAnimal(), isLandAnimal);
-    assertEquals("Water type matches", animal.getIsWaterAnimal(), isWaterAnimal);
-    assertEquals("Air type matches", animal.getIsAirAnimal(), isAirAnimal);
-  }
-
-  /**
-   * Mengetes apakah lokasi Animal benar.
-   */
-  public void matchPosition() {
-    assertEquals("X matches", (int) animal.getPosition().getX(), position.getX());
-    assertEquals("Y matches", (int) animal.getPosition().getY(), position.getY());
-  }
-
-  /**
-   * Mengetes apakah sifat kelakuan Animal benar.
-   */
-  public void matchBehavior() {
-    assertEquals("Behavior matches", animal.getBehavior(), isWild);
-  }
-
-  /**
-   * Mengetes apakah berat Animal benar.
-   */
-  public void matchWeight() {
-    assertEquals("Weight matches", animal.getWeight(), weight);
+  @Test
+  public void testAddRemoveEnemy() {
+    animal1.addEnemy(10);
+    assertTrue("Error in addEnemy()", animal1.isEnemy(10));
+    animal2.removeEnemy(1);
+    assertFalse("Error in removeEnemy()", animal2.isEnemy(1));
   }
 }

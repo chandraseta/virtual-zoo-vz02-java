@@ -48,18 +48,18 @@ public class Cell {
    * Menciptakan cell sesuai dengan parameter.
    * Semua habitat tidak bisa diakses (infrastructureAccessible = false).
    * Road dan semua habitat memiliki nama "" (string kosong).
-   * Parameter entrance dan exit hanya boleh true saat habitatType adalah "Road".
+   * Parameter entrance dan exit hanya boleh true saat cellType adalah "Road".
    * </p>
    *
    * @param accessible Nilai true/false cell dapat diakses.
-   * @param habitatType Tipe cell
+   * @param cellType Tipe cell
    * @param facilityName Nama fasilitas cell
    * @param roadEntrance Nilai true/false cell merupakan entrance.
    * @param roadExit Nilai true/false cell merupakan exit.
    */
-  public Cell(boolean accessible, String habitatType, String facilityName, boolean roadEntrance,
+  public Cell(boolean accessible, String cellType, String facilityName, boolean roadEntrance,
       boolean roadExit) {
-    type = habitatType;
+    type = cellType;
     infrastructureAccessible =
         !(type.equals("AirHabitat") || type.equals("LandHabitat") || type.equals("WaterHabitat"))
             && accessible;
@@ -124,7 +124,7 @@ public class Cell {
    *
    * @return Nilai name
    */
-  public String getfacilityName() {
+  public String getFacilityName() {
     return name;
   }
 
