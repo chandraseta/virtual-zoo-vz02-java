@@ -646,11 +646,7 @@ public class Animal {
    * @return Nilai true/false apakah merupakan musuh
    */
   public boolean isEnemy(int id) {
-    if (!isWild) {
-      return false;
-    } else {
-      return enemy.contains(id);
-    }
+    return isWild && enemy.contains(id);
   }
 
   /**

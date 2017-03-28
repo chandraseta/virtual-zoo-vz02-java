@@ -13,13 +13,13 @@ public class AnimalFood {
    * Jumlah total daging yang dibutuhkan (dalam kilogram).
    * </p>
    */
-  public static int totalReqMeat;
+  public static int totalReqMeat = 0;
   /**
    * <p>
    * Jumlah total tumbuhan yang dibutuhkan (dalam kilogram).
    * </p>
    */
-  public static int totalReqPlant;
+  public static int totalReqPlant = 0;
 
   /**
    * <p>
