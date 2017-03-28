@@ -16,7 +16,7 @@ import org.junit.Test;
  * @version 2.0
  * @since 2.0
  */
-class CellTest {
+public class CellTest {
 
   private Cell cell1;
   private Cell cell2;
