@@ -126,50 +126,73 @@ public class ZooReader {
         int x = Integer.parseInt(strSplit[2]);
         int w = Integer.parseInt(strSplit[3]);
 
-        if (species.equals("Wolf")) {
-          c.addAnimal(new Animal(1,x,y,w));
-        } else if (species.equals("Lion")) {
-          c.addAnimal(new Animal(2,x,y,w));
-        } else if (species.equals("Tiger")) {
-          c.addAnimal(new Animal(3,x,y,w));
-        } else if (species.equals("Zebra")) {
-          c.addAnimal(new Animal(4,x,y,w));
-        } else if (species.equals("Monkey")) {
-          c.addAnimal(new Animal(5,x,y,w));
-        } else if (species.equals("Giraffe")) {
-          c.addAnimal(new Animal(6,x,y,w));
-        } else if (species.equals("Elephant")) {
-          c.addAnimal(new Animal(7,x,y,w));
-        } else if (species.equals("Crocodile")) {
-          c.addAnimal(new Animal(8,x,y,w));
-        } else if (species.equals("Python")) {
-          c.addAnimal(new Animal(9,x,y,w));
-        } else if (species.equals("Komodo")) {
-          c.addAnimal(new Animal(10,x,y,w));
-        } else if (species.equals("Iguana")) {
-          c.addAnimal(new Animal(11,x,y,w));
-        } else if (species.equals("Chameleon")) {
-          c.addAnimal(new Animal(12,x,y,w));
-        } else if (species.equals("Shark")) {
-          c.addAnimal(new Animal(13,x,y,w));
-        } else if (species.equals("Clownfish")) {
-          c.addAnimal(new Animal(14,x,y,w));
-        } else if (species.equals("Barracuda")) {
-          c.addAnimal(new Animal(15,x,y,w));
-        } else if (species.equals("Owl")) {
-          c.addAnimal(new Animal(16,x,y,w));
-        } else if (species.equals("Eagle")) {
-          c.addAnimal(new Animal(17,x,y,w));
-        } else if (species.equals("Colibri")) {
-          c.addAnimal(new Animal(18,x,y,w));
-        } else if (species.equals("Peacock")) {
-          c.addAnimal(new Animal(19,x,y,w));
-        } else if (species.equals("Duck")) {
-          c.addAnimal(new Animal(20,x,y,w));
-        } else if (species.equals("WildColibri")) {
-          wildAnimals.add(new Animal(21,x,y,w));
-        } else {
-          wildAnimals.add(new Animal(0,x,y,w));
+        switch (species) {
+          case "Wolf":
+            c.addAnimal(new Animal(1, x, y, w));
+            break;
+          case "Lion":
+            c.addAnimal(new Animal(2, x, y, w));
+            break;
+          case "Tiger":
+            c.addAnimal(new Animal(3, x, y, w));
+            break;
+          case "Zebra":
+            c.addAnimal(new Animal(4, x, y, w));
+            break;
+          case "Monkey":
+            c.addAnimal(new Animal(5, x, y, w));
+            break;
+          case "Giraffe":
+            c.addAnimal(new Animal(6, x, y, w));
+            break;
+          case "Elephant":
+            c.addAnimal(new Animal(7, x, y, w));
+            break;
+          case "Crocodile":
+            c.addAnimal(new Animal(8, x, y, w));
+            break;
+          case "Python":
+            c.addAnimal(new Animal(9, x, y, w));
+            break;
+          case "Komodo":
+            c.addAnimal(new Animal(10, x, y, w));
+            break;
+          case "Iguana":
+            c.addAnimal(new Animal(11, x, y, w));
+            break;
+          case "Chameleon":
+            c.addAnimal(new Animal(12, x, y, w));
+            break;
+          case "Shark":
+            c.addAnimal(new Animal(13, x, y, w));
+            break;
+          case "Clownfish":
+            c.addAnimal(new Animal(14, x, y, w));
+            break;
+          case "Barracuda":
+            c.addAnimal(new Animal(15, x, y, w));
+            break;
+          case "Owl":
+            c.addAnimal(new Animal(16, x, y, w));
+            break;
+          case "Eagle":
+            c.addAnimal(new Animal(17, x, y, w));
+            break;
+          case "Colibri":
+            c.addAnimal(new Animal(18, x, y, w));
+            break;
+          case "Peacock":
+            c.addAnimal(new Animal(19, x, y, w));
+            break;
+          case "Duck":
+            c.addAnimal(new Animal(20, x, y, w));
+            break;
+          case "WildColibri":
+            wildAnimals.add(new Animal(21, x, y, w));
+            break;
+          default:
+            wildAnimals.add(new Animal(0, x, y, w));
+            break;
         }
         strLine = br.readLine();
       }

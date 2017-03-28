@@ -25,7 +25,7 @@ public class Driver {
   /**
    * Constructor
    * Antarmuka untuk masuk ke fitur-fitur yang ada di Virtual Zoo
-   * @throws IOException
+   * @throws IOException Jika pembacaan gagal
    */
   public Driver() throws IOException {
     zoo = new ZooReader("layout.in").getZoo();

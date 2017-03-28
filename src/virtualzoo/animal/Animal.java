@@ -68,7 +68,7 @@ public class Animal {
    * objek Animal terkait.
    * </p>
    */
-  private Set<Integer> enemy = new HashSet<Integer>();
+  private Set<Integer> enemy = new HashSet<>();
   /**
    * <p>
    * Nilai berat Animal (dalam kilogram).
@@ -646,11 +646,7 @@ public class Animal {
    * @return Nilai true/false apakah merupakan musuh
    */
   public boolean isEnemy(int id) {
-    if (!isWild) {
-      return false;
-    } else {
-      return enemy.contains(id);
-    }
+    return isWild && enemy.contains(id);
   }
 
   /**

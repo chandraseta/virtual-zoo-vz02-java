@@ -49,17 +49,17 @@ public class Zoo {
   /**
    * Berisi Cage yang ada di Zoo
    */
-  private Vector<Cage> cages = new Vector<Cage>();
+  private Vector<Cage> cages = new Vector<>();
 
   /**
    * Berisi Point yang dapat menjadi pintu masuk Zoo
    */
-  private Set<Point> entrance = new HashSet<Point>();
+  private Set<Point> entrance = new HashSet<>();
 
   /**
    * Berisi Point yang dapat menjadi pintu keluar Zoo
    */
-  private Set<Point> exit = new HashSet<Point>();
+  private Set<Point> exit = new HashSet<>();
 
   /**
    * Constructor

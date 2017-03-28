@@ -58,8 +58,8 @@ public class Cage {
   public Cage() {
     type = LAND;
     nbAnimal = 0;
-    area = new HashSet<Point>();
-    animal = new Vector<Animal>();
+    area = new HashSet<>();
+    animal = new Vector<>();
   }
 
   /**
@@ -71,8 +71,8 @@ public class Cage {
   public Cage(int habitatType) {
     type = habitatType;
     nbAnimal = 0;
-    area = new HashSet<Point>();
-    animal = new Vector<Animal>();
+    area = new HashSet<>();
+    animal = new Vector<>();
   }
 
   /**

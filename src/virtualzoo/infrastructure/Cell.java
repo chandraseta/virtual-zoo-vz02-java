@@ -60,18 +60,16 @@ public class Cell {
   public Cell(boolean accessible, String habitatType, String facilityName, boolean roadEntrance,
       boolean roadExit) {
     type = habitatType;
-    if (type.equals("AirHabitat") || type.equals("LandHabitat") || type.equals("WaterHabitat")) {
-      infrastructureAccessible = false;
-    } else {
-      infrastructureAccessible = accessible;
-    }
+    infrastructureAccessible =
+        !(type.equals("AirHabitat") || type.equals("LandHabitat") || type.equals("WaterHabitat"))
+            && accessible;
     if (type.equals("Road") || type.equals("AirHabitat") || type.equals("LandHabitat")
         || type.equals("WaterHabitat")) {
       name = "";
     } else {
       name = facilityName;
     }
-    if (type == "Road") {
+    if (type.equals("Road")) {
       isEntrance = roadEntrance;
       isExit = roadExit;
     } else {
@@ -160,20 +158,21 @@ public class Cell {
    * @return Karakter untuk dirender
    */
   public char render() {
-    if (type.equals("AirHabitat")) {
-      return 'a';
-    } else if (type.equals("LandHabitat")) {
-      return 'l';
-    } else if (type.equals("WaterHabitat")) {
-      return 'w';
-    } else if (type.equals("Road")) {
-      return '.';
-    } else if (type.equals("Park")) {
-      return '*';
-    } else if (type.equals("Restaurant")) {
-      return 'R';
-    } else {
-      return ' ';
+    switch (type) {
+      case "AirHabitat":
+        return 'a';
+      case "LandHabitat":
+        return 'l';
+      case "WaterHabitat":
+        return 'w';
+      case "Road":
+        return '.';
+      case "Park":
+        return '*';
+      case "Restaurant":
+        return 'R';
+      default:
+        return ' ';
     }
 
   }
