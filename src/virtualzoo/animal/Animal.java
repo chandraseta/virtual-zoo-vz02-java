@@ -577,6 +577,16 @@ public class Animal {
 
   /**
    * <p>
+   * Mengembalikan nilai berat Animal (dalam kilogram).
+   * </p>
+   * @return Nilai weight.
+   */
+  public int getWeight() {
+    return weight;
+  }
+
+  /**
+   * <p>
    * Menentukan kebutuhan makanan Animal yang berupa daging.
    * </p>
    * @return Jumlah daging yang dibutuhkan
