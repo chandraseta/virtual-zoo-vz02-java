@@ -1,8 +1,9 @@
 package virtualzoo.animal;
 
 
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.awt.Point;
 import org.junit.Before;
@@ -29,17 +30,28 @@ public class AnimalTest {
   }
 
   @Test
-  public void testGetterSetter {
+  public void testGetterSetter() {
     assertEquals("Error in getId()", animal1.getId(), 0);
     assertEquals("Error in getId()", animal2.getId(), 1);
-    animal1.setPosition(5,5);
-    assertEquals("Error in setPosition() and getPosition()", animal1.getPosition().getX(), 5);
-
+    animal1.setPosition(5, 5);
+    assertEquals("Error in setPosition() and getX()", animal1.getX(), 5);
+    assertEquals("Error in setPosition() and getY()", animal1.getY(), 5);
+    assertTrue("Error in getIsLandAnimal()", animal1.getIsLandAnimal());
+    assertFalse("Error in getIsWaterAnimal()", animal1.getIsWaterAnimal());
+    assertFalse("Error in getIsAirAnimal()", animal1.getIsAirAnimal());
+    assertTrue("Error in isHerbivore()", animal1.isHerbivore());
+    assertFalse("Error in isCarnivore()", animal1.isCarnivore());
+    assertFalse("Error in isOmnivore()", animal1.isOmnivore());
+    assertEquals("Error in getWeight()", animal1.getWeight(), 10);
+    assertTrue("Error in getBehavior()", animal1.getBehavior());
+    assertFalse("Error in getBehavior()", animal2.getBehavior());
   }
 
   @Test
-  public void  {
-
+  public void testMove() {
+    animal2.move(1);
+    assertEquals("Error in move()", animal2.getX(), 15);
+    assertEquals("Error in move()", animal2.getY(), 14);
   }
 
   /**

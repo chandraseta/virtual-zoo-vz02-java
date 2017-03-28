@@ -621,7 +621,7 @@ public class Animal {
    * Menambahkan ANimal yang tidak bisa disatukan dalam satu kandang
    * dengan objek Animal terkait.
    * </p>
-   * @param id Nilai ID Animal yang akan ditambahkan
+   * @param id Nilai ID Animal yang akan ditambahkan.
    */
   public void addEnemy(int id) {
     enemy.add(id);
