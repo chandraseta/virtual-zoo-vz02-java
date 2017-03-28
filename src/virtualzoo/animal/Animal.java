@@ -1,6 +1,7 @@
 package virtualzoo.animal;
 
 import java.awt.Point;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -67,7 +68,7 @@ public class Animal {
    * objek Animal terkait.
    * </p>
    */
-  private Set<Integer> enemy;
+  private Set<Integer> enemy = new HashSet<>();
   /**
    * <p>
    * Nilai berat Animal (dalam kilogram).
