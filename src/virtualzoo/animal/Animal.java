@@ -4,77 +4,108 @@ import java.awt.Point;
 import java.util.Set;
 
 /**
+ * <p>
  * Kelas Animal yang menangani semua jenis hewan
  * yang ada di dalam Zoo.
- *
+ * </p>
  * @author Rionaldi Chandraseta - 13515077
  * @version 2.0
  * @since 2.0
  */
 public class Animal {
   /**
+   * <p>
    * ID unik untuk setiap jenis Animal.
+   * </p>
    */
   private int id;
   /**
+   * <p>
    * Banyaknya alat gerak yang dimiliki Animal.
+   * </p>
    */
   private int limbCount;
   /**
+   * <p>
    * Jenis kulit yang dimiliki Animal.
+   * </p>
    */
   private String skinType;
   /**
+   * <p>
    * Atribut yang menentukan apakah Animal dapat hidup di habitat darat.
+   * </p>
    */
   private boolean isLandAnimal;
   /**
+   * <p>
    * Atribut yang menentukan apakah Animal dapat hidup di habitat air.
+   * </p>
    */
   private boolean isWaterAnimal;
   /**
+   * <p>
    * Atribut yang menentukan apakah Animal dapat hidup di habitat udara.
+   * </p>
    */
   private boolean isAirAnimal;
   /**
+   * <p>
    * Sebuah Point yang menyatakan lokasi dari Animal.
+   * </p>
    */
   private Point position;
   /**
+   * <p>
    * Atribut menentukan apakah perilaku Animal jinak atau liar.
+   * </p>
    */
   private boolean isWild;
   /**
+   * <p>
    * Berisi ID Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek Animal terkait.
+   * </p>
    */
   private Set<Integer> enemy;
   /**
+   * <p>
    * Nilai berat Animal (dalam kilogram).
+   * </p>
    */
   private int weight;
   /**
+   * <p>
    * Atribut yang menentukan apakah Animal memakan daging atau tidak.
+   * </p>
    */
   private boolean eatMeat;
   /**
+   * <p>
    * Atribut yang menentukan apakah Animal memakan tumbuhan atau tidak.
+   * </p>
    */
   private boolean eatPlant;
   /**
+   * <p>
    * Nilai rasio berat daging yang diperlukan terhadap berat Animal.
+   * </p>
    */
   private int ratioMeat;
   /**
+   * <p>
    * Nilai rasio berat tumbuhan yang diperlukan terhadap berat Animal.
+   * </p>
    */
   private int ratioPlant;
 
   /**
+   * <p>
    * Constructor
+   *
    * Menciptakan Animal dengan jenis tertentu sesuai ID, dengan posisi (locX,locY)
    * dan memiliki berat animalWeight.
-   *
+   * </p>
    * @param animalId Digunakan sebagai penentu jenis Animal
    * @param locX Nilai absis posisi
    * @param locY Nilai ordinat posisi
@@ -416,8 +447,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menggerakkan Animal dengan mengubah position-nya.
-   *
+   * </p>
    * @param movement Sebuah nilai yang menentukan arah gerak Animal
    */
   public void move(int movement) {
@@ -433,8 +465,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan nilai ID Animal untuk mengetahui jenisnya.
-   *
+   * </p>
    * @return Nilai ID
    */
   public int getId() {
@@ -442,8 +475,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan sebuah Point yang berisi posisi Animal.
-   *
+   * </p>
    * @return Nilai position
    */
   public Point getPosition() {
@@ -451,8 +485,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengubah posisi Animal menjadi (locX,locY).
-   *
+   * </p>
    * @param locX Nilai absis posisi
    * @param locY Nilai ordinat posisi
    */
@@ -461,8 +496,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan nilai absis posisi Animal.
-   *
+   * </p>
    * @return Nilai position.x
    */
   public int getX() {
@@ -470,8 +506,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan nilai ordinat posisi Animal.
-   *
+   * </p>
    * @return Nilai position.y
    */
   public int getY() {
@@ -479,8 +516,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal dapat hidup di habitat darat.
-   *
+   * </p>
    * @return Nilai isLandAnimal
    */
   public boolean isLandAnimal() {
@@ -488,8 +526,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal dapat hidup di habitat air.
-   *
+   * </p>
    * @return Nilai isWaterAnimal
    */
   public boolean isWaterAnimal() {
@@ -497,8 +536,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal dapat hidup di habitat udara.
-   *
+   * </p>
    * @return Nilai isAirAnimal
    */
   public boolean isAirAnimal() {
@@ -506,8 +546,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal yang dimaksud merupakan carnivora.
-   *
+   * </p>
    * @return Nilai true/false apakah Animal herbivora.
    */
   public boolean isHerbivore() {
@@ -515,8 +556,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal yang dimaksud merupakan carnivora.
-   *
+   * </p>
    * @return Nilai true/false apakah Animal carnivora.
    */
   public boolean isCarnivore() {
@@ -524,8 +566,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan apakah Animal yang dimaksud merupakan omnivora.
-   *
+   * </p>
    * @return Nilai true/false apakah Animal omnivora.
    */
   public boolean isOmnivore() {
@@ -533,8 +576,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan kebutuhan makanan Animal yang berupa daging.
-   *
+   * </p>
    * @return Jumlah daging yang dibutuhkan
    */
   public int getReqMeat() {
@@ -542,8 +586,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menentukan kebutuhan makanan Animal yang berupa tumbuhan.
-   *
+   * </p>
    * @return Jumlah tumbuhan yang diperlukan.
    */
   public int getReqPlant() {
@@ -551,8 +596,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan apakah Animal memiliki sifat liar.
-   *
+   * </p>
    * @return Nilai isWild.
    */
   public boolean getBehavior() {
@@ -560,9 +606,10 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menambahkan ANimal yang tidak bisa disatukan dalam satu kandang
    * dengan objek Animal terkait.
-   *
+   * </p>
    * @param id Nilai ID Animal yang akan ditambahkan
    */
   public void addEnemy(int id) {
@@ -570,9 +617,10 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Menghapus Animal yang tidak bisa disatukan dalam satu kandang
    * dengan objek Animal terkait.
-   *
+   * </p>
    * @param id Nilai ID Animal yang akan dihapus
    */
   public void removeEnemy(int id) {
@@ -580,8 +628,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Memeriksa apakah Animal dengan ID x merupakan musuh.
-   *
+   * </p>
    * @param id Animal yang ingin diperiksa
    * @return Nilai true/false apakah merupakan musuh
    */
@@ -594,8 +643,9 @@ public class Animal {
   }
 
   /**
+   * <p>
    * Mengembalikan sebuah karakter untuk proses render.
-   *
+   * </p>
    * @return Sebuah char yang menandakan Animal
    */
   public char render() {

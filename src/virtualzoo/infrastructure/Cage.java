@@ -7,8 +7,9 @@ import java.util.Vector;
 import virtualzoo.animal.Animal;
 
 /**
+ * <p>
  * Kelas Cage yang memiliki area dan berisi animal
- *
+ * </p>
  * @author Oktavianus Handika - 13515035
  * @version 2.0
  * @since 2.0
@@ -19,25 +20,36 @@ public class Cage {
   public static final int WATER = 1;
   public static final int AIR = 2;
   /**
+   * <p>
    * Jenis Habitat pada setiap Cage-nya.
+   * </p>
    */
   private int type;
   /**
+   * <p>
    * Set of Point yang menyatakan area Cage.
+   * </p>
    */
   private Set<Point> area;
   /**
+   * <p>
    * Vector of pointer to Animal yang berisi hewan.
+   * </p>
    */
   private Vector<Animal> animal;
   /**
+   * <p>
    * Banyak hewan yang ada pada suatu area.
+   * </p>
    */
   int nbAnimal;
 
   /**
+   * <p>
    * Constructor
+   *
    * Menciptakan cage default yaitu dengan habitat darat.
+   * </p>
    */
   public Cage() {
     type = LAND;
@@ -45,9 +57,11 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Constructor
-   * Menciptakan Cage dengan Habitat tertentu.
    *
+   * Menciptakan Cage dengan Habitat tertentu.
+   * </p>
    * @param habitatType tipe Habitat
    */
   public Cage(int habitatType) {
@@ -56,8 +70,9 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Menambahkan Point P menjadi area dalam Cage.
-   *
+   * </p>
    * @param p Nilai Point yang akan ditambahkan
    */
   public void addPoint(Point p) {
@@ -65,8 +80,9 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Menghilangkan Point P dari area dalam Cage.
-   *
+   * </p>
    * @param p Nilai Point yang akan dihilangkan
    */
   public void removePoint(Point p) {
@@ -74,9 +90,10 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Menambahkan animal ke dalam cage.
    * Akan diperiksa terlebih dahulu apakah cage sudah penuh.
-   *
+   * </p>
    * @param a Hewan yang ingin ditambahkan
    */
   public void addAnimal(Animal a) {
@@ -98,8 +115,9 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Menghilangkan Animal ke-i dari Cage.
-   *
+   * </p>
    * @param i Indeks Animal yang ingin dikurangi
    */
   public void removeAnimal(int i) {
@@ -111,8 +129,10 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Menggerakkan semua Animal di dalam Cage.
    * Akan diperiksa agar Animal tidak keluar dari Cage.
+   * </p>
    */
   public void moveAnimal() {
     Random randomNo = new Random();
@@ -135,8 +155,9 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Getter area Cage.
-   *
+   * </p>
    * @return Set of Point yang menyatakan area Cage
    */
   public Set<Point> getArea() {
@@ -144,8 +165,9 @@ public class Cage {
   }
 
   /**
+   * <p>
    * Getter daftar Animal.
-   *
+   * </p>
    * @return Vector of pointer to Animal yang berisi hewan
    */
   public Vector<Animal> getAnimal() {

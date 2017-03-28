@@ -9,17 +9,22 @@ package virtualzoo.animal;
  */
 public class AnimalFood {
   /**
+   * <p>
    * Jumlah total daging yang dibutuhkan (dalam kilogram).
+   * </p>
    */
   public static int totalReqMeat;
   /**
+   * <p>
    * Jumlah total tumbuhan yang dibutuhkan (dalam kilogram).
+   * </p>
    */
   public static int totalReqPlant;
 
   /**
+   * <p>
    * Menambahkan jumlah daging yang dibutuhkan ke totalReqMeat.
-   *
+   * </p>
    * @param reqMeat Jumlah daging yang dibutuhkan
    */
   public static void addTotalMeat(int reqMeat) {
@@ -27,8 +32,9 @@ public class AnimalFood {
   }
 
   /**
+   * <p>
    * Menambahkan jumlah tumbuhan yang dibutuhkan ke totalReqPlant.
-   *
+   * </p>
    * @param reqPlant Jumlah tumbuhan yang dibutuhkan
    */
   public static void addTotalPlant(int reqPlant) {
@@ -36,8 +42,9 @@ public class AnimalFood {
   }
 
   /**
+   * <p>
    * Mengembalikan total jumlah daging yang dibutuhkan.
-   *
+   * </p>
    * @return Nilai totalReqMeat
    */
   public static int getTotalMeat() {
@@ -45,8 +52,9 @@ public class AnimalFood {
   }
 
   /**
+   * <p>
    * Mengembalikan total jumlah tumbuhan yang dibutuhkan.
-   *
+   * </p>
    * @return Nilai totalReqPlant
    */
   public static int getTotalPlant() {
