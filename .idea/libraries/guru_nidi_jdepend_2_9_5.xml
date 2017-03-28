@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="guru.nidi:jdepend:2.9.5" type="repository">
+    <properties maven-id="guru.nidi:jdepend:2.9.5" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jdepend-2.9.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
