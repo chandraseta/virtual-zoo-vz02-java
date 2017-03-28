@@ -1,4 +1,4 @@
-package virtualzoo;
+package virtualzoo.misc;
 
 import java.awt.Point;
 
