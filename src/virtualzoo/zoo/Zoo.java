@@ -13,51 +13,52 @@ import virtualzoo.misc.Person;
  *
  * @author Felix Limanta - 13515065
  * @version 2.0
- * @since   2.0
+ * @since 2.0
  */
 public class Zoo {
+
   /**
-   * Konstanta panjang taman default
+   * Konstanta panjang taman default.
    */
   public static final int DEF_LENGTH = 20;
 
   /**
-   * Konstanta lebar taman default
+   * Konstanta lebar taman default.
    */
   public static final int DEF_WIDTH = 20;
 
   /**
-   * Matriks yang berisi setiap Cell yang membentuk Zoo
+   * Matriks yang berisi setiap Cell yang membentuk Zoo.
    */
-  private Cell map[][];
+  private Cell[][] map;
 
   /**
-   * Matriks char yang merepresentasikan Cell yang ada di Zoo
+   * Matriks char yang merepresentasikan Cell yang ada di Zoo.
    */
-  private char mapChar[][];
+  private char[][] mapChar;
 
   /**
-   * Panjang Zoo
+   * Panjang Zoo.
    */
   private int length;
 
   /**
-   * Lebar Zoo
+   * Lebar Zoo.
    */
   private int width;
 
   /**
-   * Berisi Cage yang ada di Zoo
+   * Berisi Cage yang ada di Zoo.
    */
   private Vector<Cage> cages = new Vector<>();
 
   /**
-   * Berisi Point yang dapat menjadi pintu masuk Zoo
+   * Berisi Point yang dapat menjadi pintu masuk Zoo.
    */
   private Set<Point> entrance = new HashSet<>();
 
   /**
-   * Berisi Point yang dapat menjadi pintu keluar Zoo
+   * Berisi Point yang dapat menjadi pintu keluar Zoo.
    */
   private Set<Point> exit = new HashSet<>();
 
@@ -65,7 +66,7 @@ public class Zoo {
    * Constructor
    * Mengalokasikan Zoo kosong dengan ukuran DEF_WIDTH x DEF_LENGTH.
    */
-  public Zoo()  {
+  public Zoo() {
     this.length = DEF_LENGTH;
     this.width = DEF_WIDTH;
     map = new Cell[DEF_WIDTH][DEF_LENGTH];
@@ -80,9 +81,10 @@ public class Zoo {
 
   /**
    * Constructor
-   * Mengalokasikan Zoo kosong dengan ukuran width x length
-   * @param length Panjang zoo
-   * @param width Lebar zoo
+   * Mengalokasikan Zoo kosong dengan ukuran width x length.
+   *
+   * @param length Panjang zoo.
+   * @param width Lebar zoo.
    */
   public Zoo(int length, int width) {
     this.length = length;
@@ -98,16 +100,18 @@ public class Zoo {
   }
 
   /**
-   * Getter panjang dari zoo
-   * @return zoo.length
+   * Getter panjang dari zoo.
+   *
+   * @return zoo.length.
    */
   public int getLength() {
     return length;
   }
 
   /**
-   * Getter lebar dari zoo
-   * @return zoo.width
+   * Getter lebar dari zoo.
+   *
+   * @return zoo.width.
    */
   public int getWidth() {
     return width;
@@ -115,6 +119,7 @@ public class Zoo {
 
   /**
    * Getter cell pada titik (i,j).
+   *
    * @param i Indeks matriks (absis).
    * @param j Indeks matriks (ordinat).
    * @return Cell pada titik (i,j).
@@ -125,6 +130,7 @@ public class Zoo {
 
   /**
    * Menetapkan jenis cell pada titik (i,j).
+   *
    * @param c Suatu cell yang telah diciptakan.
    * @param i Indeks matriks (absis).
    * @param j Indeks matriks (ordinat).
@@ -141,9 +147,11 @@ public class Zoo {
   }
 
   /**
-   * @return Matriks char dari map zoo
+   * @return Matriks char dari map zoo.
    */
-  public char[][] getMapChar() { return mapChar; }
+  public char[][] getMapChar() {
+    return mapChar;
+  }
 
   /**
    * @return Set berisi point lokasi entrance zoo.
@@ -168,6 +176,7 @@ public class Zoo {
 
   /**
    * Menambahkan cage baru dalam zoo.
+   *
    * @param c Cage yang sudah diciptakan.
    */
   public void addCage(Cage c) {
@@ -176,8 +185,9 @@ public class Zoo {
 
   /**
    * Menghilangkan cage pada indeks ke-i dari zoo.
+   *
    * @param i Indeks cage yang ingin dihilangkan.
-   * @return Cage yang dihapus
+   * @return Cage yang dihapus.
    */
   public Cage removeCage(int i) {
     if (i >= 0 && i < cages.size()) {
@@ -191,6 +201,7 @@ public class Zoo {
 
   /**
    * Melakukan proses render untuk seisi zoo.
+   *
    * @param visitor Person yang merupakan pengunjung zoo.
    */
   public void renderMap(Person visitor) {
@@ -199,19 +210,19 @@ public class Zoo {
         mapChar[i][j] = map[i][j].render();
       }
     }
-    for (Cage cage: cages) {
-      for (Point p: cage.getArea()) {
+    for (Cage cage : cages) {
+      for (Point p : cage.getArea()) {
         mapChar[(int) p.getY()][(int) p.getX()] =
             Character.toUpperCase(mapChar[(int) p.getY()][(int) p.getX()]);
       }
-      for (Animal a: cage.getAnimal()) {
+      for (Animal a : cage.getAnimal()) {
         Point p = a.getPosition();
         mapChar[(int) p.getY()][(int) p.getX()] = a.render();
       }
     }
     Point p = visitor.getPosition();
-    if (p.getX() >= 0 && p.getX() < length &&
-        p.getY() >= 0 && p.getY() < width) {
+    if (p.getX() >= 0 && p.getX() < length
+        && p.getY() >= 0 && p.getY() < width) {
       mapChar[(int) p.getY()][(int) p.getX()] = visitor.render();
     }
   }
@@ -224,9 +235,9 @@ public class Zoo {
       for (int j = 0; j < DEF_LENGTH; ++j) {
         Cell r = map[i][j];
         if (r.isEntrance()) {
-          entrance.add(new Point(j,i));
+          entrance.add(new Point(j, i));
         } else if (r.isExit()) {
-          exit.add(new Point(j,i));
+          exit.add(new Point(j, i));
         }
       }
     }

@@ -5,7 +5,7 @@ import virtualzoo.animal.AnimalFood;
 
 /**
  * Kelas ZooFood merupakan kelas untuk memfasilitasi
- * perhitungan makanan yang dkonsumsi di Zoo
+ * perhitungan makanan yang dkonsumsi di Zoo.
  *
  * @author Felix Limanta - 13515065
  * @version 2.0
@@ -14,23 +14,23 @@ import virtualzoo.animal.AnimalFood;
 public class ZooFood {
 
   /**
-   * Zoo yang dihitung konsumsi makanannya
+   * Zoo yang dihitung konsumsi makanannya.
    */
   private Zoo zoo;
 
   /**
-   * Total daging yang dikonsumsi di Zoo
+   * Total daging yang dikonsumsi di Zoo.
    */
   private int totalMeat;
 
   /**
-   * Total tumbuhan yang dikonsumsi di Zoo
+   * Total tumbuhan yang dikonsumsi di Zoo.
    */
   private int totalPlant;
 
   /**
    * Konstruktor
-   * @param zoo Zoo yang akan dihitung konsumsi makanannya
+   * @param zoo Zoo yang akan dihitung konsumsi makanannya.
    */
   public ZooFood(Zoo zoo) {
     this.zoo = zoo;
@@ -40,7 +40,7 @@ public class ZooFood {
 
   /**
    * Getter
-   * @return Total daging yang dikonsumsi di Zoo
+   * @return Total daging yang dikonsumsi di Zoo.
    */
   public int getTotalMeat() {
     return totalMeat;
@@ -48,7 +48,7 @@ public class ZooFood {
 
   /**
    * Getter
-   * @return Total tumbuhan yang dikonsumsi di Zoo
+   * @return Total tumbuhan yang dikonsumsi di Zoo.
    */
   public int getTotalPlant() {
     return totalPlant;
@@ -56,7 +56,7 @@ public class ZooFood {
 
   /**
    * Interface untuk menampilkan konsumsi total
-   * dagiing dan tanaman di Zoo
+   * daging dan tanaman di Zoo.
    */
   public void displayTotalFood() {
     System.out.print("\033[H\033[2J");
@@ -73,7 +73,7 @@ public class ZooFood {
   }
 
   /**
-   * Menghitung jumlah makanan yang dikonsumsi di Zoo
+   * Menghitung jumlah makanan yang dikonsumsi di Zoo.
    */
   public void calculateTotalFood() {
     totalMeat = AnimalFood.getTotalMeat();

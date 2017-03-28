@@ -1,0 +1,213 @@
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.concurrent
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: virtualzoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 4
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.Driver
+    virtualzoo.VirtualZoo
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+    virtualzoo.zoo
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: virtualzoo.animal
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 5
+
+    A: 0
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.animal.Animal
+    virtualzoo.animal.AnimalFood
+    virtualzoo.animal.AnimalTest
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    java.util
+    org.junit
+
+Used By:
+    virtualzoo.zoo
+
+--------------------------------------------------
+- Package: virtualzoo.infrastructure
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 2
+
+    A: 0
+    I: 0.67
+    D: 0.33
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.infrastructure.CellTest
+
+Depends Upon:
+    java.lang
+    org.junit
+
+Used By:
+    virtualzoo.zoo
+
+--------------------------------------------------
+- Package: virtualzoo.misc
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 2
+
+    A: 0
+    I: 0.67
+    D: 0.33
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.misc.Person
+
+Depends Upon:
+    java.awt
+    java.lang
+
+Used By:
+    virtualzoo.zoo
+
+--------------------------------------------------
+- Package: virtualzoo.zoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 8
+
+    A: 0
+    I: 0.89
+    D: 0.11
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.zoo.Cage
+    virtualzoo.zoo.Zoo
+    virtualzoo.zoo.ZooDisplay
+    virtualzoo.zoo.ZooFood
+    virtualzoo.zoo.ZooReader
+    virtualzoo.zoo.ZooTour
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    java.util
+    java.util.concurrent
+    virtualzoo.animal
+    virtualzoo.infrastructure
+    virtualzoo.misc
+
+Used By:
+    virtualzoo
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+java.awt,0,0,3,0,0,0,1,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,5,0,0,0,1,1
+java.util,0,0,3,0,0,0,1,1
+java.util.concurrent,0,0,1,0,0,0,1,1
+org.junit,0,0,2,0,0,0,1,1
+virtualzoo,2,0,0,4,0,1,0,1
+virtualzoo.animal,3,0,1,5,0,0.83,0.17,1
+virtualzoo.infrastructure,1,0,1,2,0,0.67,0.33,1
+virtualzoo.misc,1,0,1,2,0,0.67,0.33,1
+virtualzoo.zoo,6,0,1,8,0,0.89,0.11,1
