@@ -1,6 +1,6 @@
 package virtualzoo.animal;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.awt.Point;
 
@@ -15,71 +15,27 @@ import java.awt.Point;
  */
 public class AnimalTest {
 
-  /**
-   * <p>
-   * ID unik untuk setiap jenis Animal.
-   * </p>
-   */
-  private int id;
-  /**
-   * <p>
-   * Atribut yang menentukan apakah Animal dapat hidup di habitat darat.
-   * </p>
-   */
-  private boolean isLandAnimal;
-  /**
-   * <p>
-   * Atribut yang menentukan apakah Animal dapat hidup di habitat air.
-   * </p>
-   */
-  private boolean isWaterAnimal;
-  /**
-   * <p>
-   * Atribut yang menentukan apakah Animal dapat hidup di habitat udara.
-   * </p>
-   */
-  private boolean isAirAnimal;
-  /**
-   * <p>
-   * Sebuah Point yang menyatakan lokasi dari Animal.
-   * </p>
-   */
-  private Point position = new Point(-1, -1);
-  /**
-   * <p>
-   * Atribut menentukan apakah perilaku Animal jinak atau liar.
-   * </p>
-   */
-  private boolean isWild;
-  /**
-   * <p>
-   * Nilai berat Animal (dalam kilogram).
-   * </p>
-   */
-  private int weight;
+  private Animal animal1;
+  private Animal animal2;
 
-  private Animal animal;
+  @BeforeAll
+  public void setUp() {
+    animal1 = new Animal(0, 10, 10, 10);
+    animal2 = new Animal(1, 15, 15, 40);
+  }
 
-  /**
-   * Constructor.
-   * <p>
-   * Meciptakan sebuah Animal dan menyimpan atribut-atributnya
-   * untuk pengetesan.
-   * </p>
-   * @param animalID Digunakan sebagai penentu jenis Animal.
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Animal.
-   */
-  public AnimalTest(int animalID, int locX, int locY, int animalWeight) {
-    animal = new Animal(animalID, locX, locY, animalWeight);
-    id = animalID;
-    isLandAnimal = animal.getIsLandAnimal();
-    isWaterAnimal = animal.getIsWaterAnimal();
-    isAirAnimal = animal.getIsAirAnimal();
-    position.setLocation(locX, locY);
-    isWild = animal.getBehavior();
-    weight = animal.getWeight();
+  @Test
+  public void testGetterSetter {
+    assertEquals("Error in getId()", animal1.getId(), 0);
+    assertEquals("Error in getId()", animal2.getId(), 1);
+    animal1.setPosition(5,5)
+    assertEquals("Error in setPosition(), getPosition()", animal1.getPosition().getX(), 5);
+
+  }
+
+  @Test
+  public void  {
+
   }
 
   /**
